@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import BookList from "./Components/BookList";
 import Navbar from "./Components/Navbar";
 import Searchbar from "./Components/SearchBar";
 import { getBooksByTerm} from "./api/GBDB";
@@ -13,6 +14,7 @@ const App = () =>{
     event.preventDefault();
     await getBooksByTerm(SearchTerm,setBooks);
   }
+
   const handleChange=(event)=>{
     //console.log(event.target.value)
     setSearchTerm(event.target.value)
@@ -20,6 +22,8 @@ const App = () =>{
   return <div>
     <Navbar/>
     <Searchbar handleChange={handleChange}  handleSubmit={handleSubmit}/>
+    {books.length!=0?(<BookList books={books}/>):""}
+    
     </div>
 };
 

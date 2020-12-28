@@ -12,8 +12,8 @@ const getBooksByTerm = (SearchTerm, setBooks) => {
       page: 1,
     },
   }).then((response) => {
-    console.log(response);
-    //setBooks(response.data.results);
+    //console.log(response.data.items);
+    setBooks(response.data);
     //setTotalPages(response.data.total_pages);
   });
 };
