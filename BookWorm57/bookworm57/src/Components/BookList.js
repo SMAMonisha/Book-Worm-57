@@ -2,7 +2,7 @@ import React from "react";
 import Book from "./Book";
 
 const BookList = (props) => {
-    console.log(props);
+   // console.log(props);
   return (
     <div className="container">
       <div className="row">

@@ -1,6 +1,7 @@
 import React from "react";
 
 const Book = (props) => {
+ //console.log(props.data)
   const ImageURL = props.data.volumeInfo.imageLinks;
   return (
     <div>
