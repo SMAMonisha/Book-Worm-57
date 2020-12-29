@@ -1,7 +1,8 @@
 import React from "react";
+import {Link } from "react-router-dom";
 
 const Book = (props) => {
- //console.log(props.data)
+ console.log(props.data)
   const ImageURL = props.data.volumeInfo.imageLinks;
   return (
     <div>
@@ -20,7 +21,12 @@ const Book = (props) => {
           </div>
           <span className="card-title">{props.data.volumeInfo.title}</span>
           <div className="card-content">{props.data.volumeInfo.authors}</div>
-          <div className="card-action">See Details</div>
+          <div className="card-action">
+            <Link  style={{ color:"blue" }} to={{
+              pathname:'/volumes/'+props.data.id,
+              volumeId:props.data.id,
+            }}>See Details</Link>
+            </div>
         </div>
       </div>
     </div>

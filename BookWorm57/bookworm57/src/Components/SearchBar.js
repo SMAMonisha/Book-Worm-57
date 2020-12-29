@@ -9,6 +9,7 @@ const Searchbar = (props) => {
           <form action="" onSubmit={props.handleSubmit}>
             <div className="input-field">
               <input
+              //style={{ marginLeft:400, marginRight:500, marginTop:20}}
                 placeholder="Search for books"
                 type="text"
                 onChange={props.handleChange}

@@ -22,5 +22,16 @@ const getBooksByTerm = (SearchTerm, setBooks,sort,pageNo,setTotalPages) => {
   });
 };
 
-
-export { getBooksByTerm };
+const getBookDetails = (bookId, setCurrentBook, setCurrentImage) => {
+  GBDB.get("volumes/" + bookId).then((response) => {
+    console.log(response.data.volumeInfo);
+    setCurrentBook(response.data.volumeInfo);
+    {
+      response.data.volumeInfo.imageLinks == undefined
+        ? setCurrentImage("")
+        : setCurrentImage(response.data.volumeInfo.imageLinks.thumbnail);
+    }
+    // console.log(response.data.volumeInfo.imageLinks.thumbnail)
+  });
+};
+export { getBooksByTerm, getBookDetails };

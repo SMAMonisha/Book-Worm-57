@@ -36,7 +36,7 @@ const App = () =>{
     await getBooksByTerm(SearchTerm,setBooks,sort,index,setTotalPages);
   }
   return <div>
-    <Navbar/>
+    {/* <Navbar/> */}
     <SortPicker value={sort} data={data} handleChange={pickerChange}/>
     <Searchbar handleChange={handleChange}  handleSubmit={handleSubmit}/>
     {books.length!=0?(<BookList books={books}/>):""}
