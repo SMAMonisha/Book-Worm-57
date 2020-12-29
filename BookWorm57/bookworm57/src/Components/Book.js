@@ -9,15 +9,16 @@ const Book = (props) => {
         <div className="card">
           <div className="card-image">
             {ImageURL == null ? (
-              <img 
+              <img alt=""
                 src="https://picsum.photos/200/300"
                 style={{ width: "100", height: "200" }}
               />
             ) : (
-              <img src={ImageURL.thumbnail}  />
+              <img alt="" src={ImageURL.smallThumbnail}  />
             )}
-            <span className="card-title">{props.data.volumeInfo.title}</span>
+            
           </div>
+          <span className="card-title">{props.data.volumeInfo.title}</span>
           <div className="card-content">{props.data.volumeInfo.authors}</div>
           <div className="card-action">See Details</div>
         </div>

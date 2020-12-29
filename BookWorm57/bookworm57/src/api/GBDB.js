@@ -4,11 +4,12 @@ const GBDB = axios.create({
   baseURL: "https://www.googleapis.com/books/v1/",
 });
 
-const getBooksByTerm = (SearchTerm, setBooks,pageNo,setTotalPages) => {
+const getBooksByTerm = (SearchTerm, setBooks,sort,pageNo,setTotalPages) => {
   GBDB.get("/volumes", {
     params: {
         //api_key:"AIzaSyDTkC5WFhzQZiGACPQ4djX3NTx3N4FE_lU",
       q: SearchTerm,
+      orderBy: sort,
       startIndex: pageNo,
       maxResults:20,
     },

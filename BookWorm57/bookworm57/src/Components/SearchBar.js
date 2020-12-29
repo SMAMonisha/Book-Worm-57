@@ -2,6 +2,7 @@ import React from "react";
 
 const Searchbar = (props) => {
   return (
+    <div>
     <div className="container">
       <div className="row">
         <section className="col s6 offset-s4">
@@ -16,6 +17,7 @@ const Searchbar = (props) => {
           </form>
         </section>
       </div>
+    </div>
     </div>
   );
 };
