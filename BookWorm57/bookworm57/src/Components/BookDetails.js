@@ -12,8 +12,9 @@ const BookDetailsScreen=(props)=>{
     //console.log(currentBook)
   return (
     <div>
-      <div className="col s12 m4">
-        <div className="card">
+      <div class="center" style={{padding:40}}>
+      <div className="col s12 m7">
+        <div className="card" style={{padding:60}}>
           <div className="card-image">
             {currentImage == "" ? (
               <img alt=""
@@ -21,20 +22,20 @@ const BookDetailsScreen=(props)=>{
                 style={{ width: "80", height: "100",borderColor:"skyblue" }}
               />
             ) : (
-              <img alt= "" src={currentImage} style={{fontSize:30,paddingLeft:10,paddingRight:10,borderColor:"skyblue"}} />
+              <img alt= "" src={currentImage} style={{width: "300", height: "600",fontSize:30,padding:100,paddingRight:10,borderColor:"skyblue"}} />
             )}
-            <span className="card-title">{currentBook.title}</span>
           </div>
-          <span className="card-title" style={{color:'blue'}}>Author: {currentBook.authors}</span> 
-          <p className="card-title" style={{color:'blue'}}>Publish Date: {currentBook.publishedDate}</p>
+          <span className="card-title" style={{}}>{currentBook.title}</span>
+          <p className="card-title" style={{color:'blue'}}>Author: {currentBook.authors}</p> 
+          <p className="" style={{color:'blue'}}>Publish Date: {currentBook.publishedDate}</p>
 
-            <p >{currentBook.description}</p>
+            <p className="card-content" >{currentBook.description}</p>
           <div className="card-action"  style={{backgroundColor:"skyblue"}} >
             <Link style={{color:'blue'}} to='/'>Go to search page</Link>
             </div>
         </div>
         </div>
-    
+      </div>
     </div>
   );
 }
